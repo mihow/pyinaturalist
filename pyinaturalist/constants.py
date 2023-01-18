@@ -7,16 +7,16 @@ from dateutil.relativedelta import relativedelta
 from platformdirs import user_data_dir
 
 # iNaturalist URLs
-API_V0 = 'https://www.inaturalist.org'
-API_V1 = 'https://api.inaturalist.org/v1'
-API_V2 = 'https://api.inaturalist.org/v2'
-EXPORT_URL = 'https://www.inaturalist.org/observations/export'
+API_V0 = 'http://localhost:3000'
+API_V1 = 'http://localhost:4000/v1'
+API_V2 = 'http://localhost:4000/v2'
+EXPORT_URL = 'http://localhost:3000/observations/export'
 INAT_BASE_URL = API_V0
 INAT_REPO = 'https://raw.githubusercontent.com/inaturalist/inaturalist/main'
 ICONIC_TAXA_BASE_URL = f'{INAT_REPO}/app/assets/images/iconic_taxa'
 PHOTO_BASE_URL = 'https://static.inaturalist.org/photos'
 PHOTO_CC_BASE_URL = 'https://inaturalist-open-data.s3.amazonaws.com/photos'
-PHOTO_INFO_BASE_URL = 'https://www.inaturalist.org/photos'
+PHOTO_INFO_BASE_URL = 'http://localhost:3000/photos'
 
 # Prefix used for keyring entries
 KEYRING_KEY = '/inaturalist'
@@ -52,11 +52,11 @@ SAMPLE_DATA_DIR = join(PROJECT_DIR, 'test', 'sample_data')
 TOKEN_EXPIRATION = timedelta(hours=1)
 JWT_EXPIRATION = timedelta(days=1)
 CACHE_EXPIRATION = {
-    'api.inaturalist.org/*autocomplete': timedelta(days=30),
-    'api.inaturalist.org/v*/controlled_terms*': timedelta(days=7),
-    'api.inaturalist.org/v*/places*': timedelta(days=7),
-    'api.inaturalist.org/v*/taxa*': timedelta(days=7),
-    'www.inaturalist.org/users/api_token': JWT_EXPIRATION,
+    'localhost:4000/*autocomplete': timedelta(days=30),
+    'localhost:4000/v*/controlled_terms*': timedelta(days=7),
+    'localhost:4000/v*/places*': timedelta(days=7),
+    'localhost:4000/v*/taxa*': timedelta(days=7),
+    'localhost:3000/users/api_token': JWT_EXPIRATION,
     f'{PHOTO_CC_BASE_URL}/*': -1,
     f'{PHOTO_BASE_URL}/*': -1,
     f'{ICONIC_TAXA_BASE_URL}/*': -1,
